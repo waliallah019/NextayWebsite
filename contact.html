@@ -5,86 +5,182 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - Nextay</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="css/styles.css">
     <style>
+        :root {
+            --gold: #fefefe;
+            --dark-gold: #B8860B;
+            --black: #000000;
+            --off-white: #F5F5F5;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            background-color: black;
-            color: peachpuff;
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--black);
+            color: var(--off-white);
         }
+
         .navbar {
-            background-color: black;
-            border-bottom: 2px solid goldenrod;
+            background-color: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
         }
-        .navbar-brand {
-            color: goldenrod;
-            font-weight: bold;
+
+        .navbar-brand, .nav-link {
+            color: var(--gold) !important;
+            transition: color 0.3s ease;
         }
-        .nav-link {
-            color: peachpuff;
-        }
+
         .nav-link:hover {
-            color: goldenrod;
+            color: var(--dark-gold) !important;
         }
-        footer {
-            background-color: black;
-            color: goldenrod;
-            padding: 10px 0;
+
+        .contact-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
+            height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
         }
+
+        .contact-hero h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        .contact-hero p {
+            font-size: 1.5rem;
+            color: var(--off-white);
+        }
+
+        .contact-form {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .form-control {
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--off-white);
+            padding: 0.8rem;
+        }
+
+        .form-control:focus {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-color: var(--gold);
+            box-shadow: none;
+            color: var(--off-white);
+        }
+
         .form-label {
-            color: goldenrod;
+            color: var(--gold);
+            font-weight: 500;
         }
-        .btn {
-            background-color: goldenrod;
-            color: black;
+
+        .btn-submit {
+            background-color: var(--gold);
+            color: var(--black);
+            font-size: 1.2rem;
+            padding: 12px 30px;
+            border-radius: 50px;
+            transition: all 0.3s ease;
             border: none;
         }
-        .btn:hover {
-            background-color: peachpuff;
-            color: black;
+
+        .btn-submit:hover {
+            background-color: var(--dark-gold);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(254, 254, 254, 0.2);
+        }
+
+        footer {
+            background-color: rgba(0, 0, 0, 0.9);
+            color: var(--gold);
+            padding: 2rem 0;
+            margin-top: 4rem;
         }
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg sticky-top">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Nextay</a>
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Nextay</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="contact.html">Contact Us</a></li>
-                    <li class="nav-item"><a class="nav-link" href="download.html">Download App</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#features">Features</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="download.html">Download</a></li>
                 </ul>
             </div>
         </div>
     </nav>
-    <div class="container my-5">
-        <h2 class="text-center">Contact Us</h2>
-        <p class="text-center">We'd love to hear from you! Fill out the form below and our team will get back to you shortly.</p>
-        <form action="submit_contact.php" method="POST" class="mt-4">
-            <div class="mb-3">
-                <label for="name" class="form-label">Name</label>
-                <input type="text" id="name" name="name" class="form-control" required>
+
+    <header class="contact-hero">
+        <div class="container">
+            <h1 class="animate__animated animate__fadeInDown">Contact Us</h1>
+            <p class="animate__animated animate__fadeInUp">We're here to help you with your next stay</p>
+        </div>
+    </header>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <form class="contact-form animate-fade-up">
+                        <div class="mb-4">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="name" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message" rows="5" required></textarea>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-submit">Send Message</button>
+                        </div>
+                    </form>
+                </div>
             </div>
-            <div class="mb-3">
-                <label for="email" class="form-label">Email</label>
-                <input type="email" id="email" name="email" class="form-control" required>
-            </div>
-            <div class="mb-3">
-                <label for="message" class="form-label">Message</label>
-                <textarea id="message" name="message" rows="5" class="form-control" required></textarea>
-            </div>
-            <div class="text-center">
-                <button type="submit" class="btn">Send Message</button>
-            </div>
-        </form>
-    </div>
-    <footer class="text-center">
-        <p>&copy; 2024 Nextay. All rights reserved.</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container text-center">
+            <p>&copy; 2024 Nextay. All rights reserved.</p>
+        </div>
     </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const animateElements = document.querySelectorAll('.animate-fade-up');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('show');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            animateElements.forEach(element => {
+                observer.observe(element);
+            });
+        });
+    </script>
 </body>
 </html>
+

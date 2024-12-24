@@ -3,120 +3,195 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nextay - Hotel Management System</title>
+    <title>Nextay - Your Next Stay Awaits</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="css/styles.css">
     <style>
+        :root {        
+            --gold: #fefefe;
+            --dark-gold: #B8860B;
+            --black: #000000;
+            --off-white: #F5F5F5;
+        }
+        
         body {
-            font-family: Arial, sans-serif;
-            background-color: black;
-            color: peachpuff;
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--black);
+            color: var(--off-white);
         }
+
         .navbar {
-            background-color: black;
-            border-bottom: 2px solid goldenrod;
+            background-color: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
         }
-        .navbar-brand {
-            color: goldenrod;
-            font-weight: bold;
+
+        .navbar-brand, .nav-link {
+            color: var(--gold) !important;
+            transition: color 0.3s ease;
         }
-        .nav-link {
-            color: peachpuff;
-        }
+
         .nav-link:hover {
-            color: goldenrod;
+            color: var(--dark-gold) !important;
         }
-        .header, .section {
-            background-color: black;
-            color: peachpuff;
-        }
-        .header {
+
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://source.unsplash.com/random/1920x1080/?luxury-hotel') no-repeat center center;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
-            padding: 50px 0;
         }
-        .card {
-            background-color: black;
-            color: peachpuff;
-            border: 1px solid goldenrod;
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
         }
-        .card:hover {
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn-download {
+            background-color: var(--gold);
+            color: var(--black);
+            font-size: 1.2rem;
+            padding: 15px 30px;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-download:hover {
+            background-color: var(--dark-gold);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.4);
+        }
+
+        .features {
+            padding: 5rem 0;
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        .feature-card {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
             transform: translateY(-10px);
-            transition: 0.3s;
-            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.5);
+            box-shadow: 0 15px 30px rgba(212, 175, 55, 0.2);
         }
+
         footer {
-            background-color: black;
-            color: goldenrod;
-            padding: 10px 0;
+            background-color: rgba(0, 0, 0, 0.9);
+            color: var(--gold);
+            padding: 2rem 0;
         }
-        .btn {
-            background-color: goldenrod;
-            color: black;
-            border: none;
+
+        .animate-fade-up {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
         }
-        .btn:hover {
-            background-color: peachpuff;
-            color: black;
+
+        .animate-fade-up.show {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg sticky-top">
-        <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
             <a class="navbar-brand" href="#">Nextay</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
-                    <li class="nav-item"><a class="nav-link" href="download.html">Download App</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="download.html">Download</a></li>
                 </ul>
             </div>
         </div>
     </nav>
-    <header class="header">
-        <h1>Welcome to Nextay</h1>
-        <p>Your ultimate hotel management solution, combining efficiency with innovation.</p>
+
+    <header id="home" class="hero">
+        <div class="container">
+            <h1 class="animate__animated animate__fadeInDown">Welcome to Nextay</h1>
+            <p class="animate__animated animate__fadeInUp">Your Next Stay, Simplified</p>
+            <a href="https://github.com/fasitahir/nextay/releases/download/v1.0.0/app-release.apk" class="btn btn-download animate__animated animate__bounceIn animate__delay-1s">Download Now</a>
+        </div>
     </header>
-    <section class="section py-5">
-        <div class="container text-center">
-            <h2>Features</h2>
-            <div class="row mt-4">
-                <div class="col-md-4">
-                    <div class="card">
-                        <img src="images/room.jpg" class="card-img-top" alt="Room Management">
-                        <div class="card-body">
-                            <h5 class="card-title">Room Management</h5>
-                            <p class="card-text">Manage bookings, availability, and room statuses with ease.</p>
-                        </div>
+
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="text-center mb-5 animate-fade-up">Why Choose Nextay?</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="feature-card animate-fade-up">
+                        <i class="feature-icon fas fa-hotel"></i>
+                        <h3>Effortless Management</h3>
+                        <p>Manage employees, rooms and finances easily with our intuitive system.</p>
+                        
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <img src="images/employee.jpg" class="card-img-top" alt="Employee Management">
-                        <div class="card-body">
-                            <h5 class="card-title">Employee Management</h5>
-                            <p class="card-text">Keep track of your team, salaries, and promotions effectively.</p>
-                        </div>
+                <div class="col-md-4 mb-4">
+                    <div class="feature-card animate-fade-up">
+                        <i class="feature-icon fas fa-concierge-bell"></i>
+                        <h3>24/7 Support</h3>
+                        <p>Our dedicated team is always ready to assist you, anytime, anywhere.</p>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <img src="images/finances.jpg" class="card-img-top" alt="Finance Management">
-                        <div class="card-body">
-                            <h5 class="card-title">Finance Management</h5>
-                            <p class="card-text">Streamline financial operations and ensure transparency.</p>
-                        </div>
+                <div class="col-md-4 mb-4">
+                    <div class="feature-card animate-fade-up">
+                        <i class="feature-icon fas fa-chart-line"></i>
+                        <h3>Smart Analytics</h3>
+                        <p>Gain valuable insights to optimize your hotel's performance.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <footer class="text-center">
-        <p>&copy; 2024 Nextay. All rights reserved.</p>
+
+    <footer>
+        <div class="container text-center">
+            <p>&copy; 2024 Nextay. All rights reserved.</p>
+        </div>
     </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const animateElements = document.querySelectorAll('.animate-fade-up');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('show');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            animateElements.forEach(element => {
+                observer.observe(element);
+            });
+        });
+    </script>
 </body>
 </html>
+
