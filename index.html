@@ -44,7 +44,6 @@
             justify-content: center;
             text-align: center;
         }
-
         .hero h1 {
             font-size: 4rem;
             font-weight: 700;
@@ -109,6 +108,25 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+        .callout-section {
+            padding: 3rem;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.05);
+            margin-top: 2rem;
+            border-radius: 10px;
+        }
+
+        .callout-section a {
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .callout-section a:hover {
+            color: var(--dark-gold);
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -122,6 +140,7 @@
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+                    <li class="nav-item"><a class="nav-link" href="demo_usage.html">Subscribe</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                     <li class="nav-item"><a class="nav-link active" href="download.html">Download</a></li>
                 </ul>
@@ -134,9 +153,13 @@
             <h1 class="animate__animated animate__fadeInDown">Welcome to Nextay</h1>
             <p class="animate__animated animate__fadeInUp">Your Next Stay, Simplified</p>
             <a href="https://github.com/fasitahir/nextay/releases/download/v1.0.0/app-release.apk" class="btn btn-download animate__animated animate__bounceIn animate__delay-1s">Download Now</a>
+            <p class="mt-5">
+                <strong>Also available on:</strong>
+                <a href="https://apkpure.net/p/com.nextay" target="_blank">APK Pure</a>
+                
+            </p>
         </div>
     </header>
-
     <section id="features" class="features">
         <div class="container">
             <h2 class="text-center mb-5 animate-fade-up">Why Choose Nextay?</h2>
@@ -163,6 +186,13 @@
                         <p>Gain valuable insights to optimize your hotel's performance.</p>
                     </div>
                 </div>
+            </div>
+
+            <div id = "explore" class="callout-section mt-5">
+                <h3>Want to explore Nextay before subscribing?</h3>
+                <p>
+                    Check out our demo mode! <a href="demo_usage.html">Learn how to use it here.</a>
+                </p>
             </div>
         </div>
     </section>
@@ -194,4 +224,3 @@
     </script>
 </body>
 </html>
-

@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscribe - Nextay</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        :root {
+            --gold: #ffffff; 
+            --dark-gold: #B8860B;
+            --black: #000000;
+            --off-white: #F5F5F5;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--black);
+            color: var(--off-white);
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            background-color: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+        }
+
+        .navbar-brand, .nav-link {
+            color: var(--gold) !important;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--dark-gold) !important;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://source.unsplash.com/random/1920x1080/?business,subscription') no-repeat center center;
+            background-size: cover;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 100px 0;
+            margin-bottom: 80px;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 2rem;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            color: var(--off-white);
+            margin-bottom: 2rem;
+        }
+
+        .content-section {
+            padding: 80px 0;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            color: var(--gold);
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            line-height: 1.6;
+        }
+
+        .contact-info {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .contact-info a {
+            color: var(--gold);
+            text-decoration: none;
+        }
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+            text-align: center;
+            color: var(--gold);
+        }
+
+        .scroll-indicator .arrow {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .scroll-indicator .text {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0) translateX(-50%);
+            }
+            40% {
+                transform: translateY(-20px) translateX(-50%);
+            }
+            60% {
+                transform: translateY(-10px) translateX(-50%);
+            }
+        }
+
+        .highlight-email {
+            color: #0044ff;
+            font-weight: bold;
+            font-size: 1.2em;
+            text-decoration: none;
+            border-bottom: 2px solid #0062ff;
+            padding-bottom: 2px;
+            transition: all 0.3s ease;
+        }
+        
+        .highlight-email:hover {
+            color: #0062ff; /* Changed to match the new gold color */
+            border-color: #ffffff;
+        }
+    
+        .btn-subscribe {
+            background-color: rgb(153, 0, 0);
+            color: var(--black);
+            font-size: 1.2rem;
+            padding: 15px 30px;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-subscribe:hover {
+            background-color: red;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(211, 211, 211, 0.4);
+        }
+        .demo-section {
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 80px 0;
+            margin-top: 80px;
+        }
+
+        .demo-info {
+            max-width: 800px;
+            margin: 0 auto 60px;
+            text-align: center;
+        }
+
+        .credentials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 0 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .credential-card {
+            background-color: rgba(255, 255, 255, 0.08);
+            border-radius: 15px;
+            padding: 30px;
+            transition: transform 0.3s ease;
+        }
+
+        .credential-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .credential-card h3 {
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .credential-info {
+            margin-bottom: 1.5rem;
+        }
+
+        .credential-info p {
+            margin-bottom: 0.5rem;
+        }
+
+        .role-description {
+            color: #888;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        footer {
+            background-color: rgba(0, 0, 0, 0.9);
+            color: var(--gold);
+            padding: 30px 0;
+            text-align: center;
+            margin-top: 80px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Nextay</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+                    <li class="nav-item"><a class="nav-link" href="demo_usage.html">Subscribe</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="download.html">Download</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1 class="animate__animated animate__fadeInDown">Subscribe to Nextay</h1>
+            
+            <p class="animate__animated animate__fadeInUp">Experience the full power of Nextay with our premium subscription plans. Our packages are designed to meet your specific needs and help you maximize productivity.</p>
+            <div class="contact-info">
+                <strong>Contact our team at:</strong> 
+                <a href="mailto:team.nextay@gmail.com" class="highlight-email">team.nextay@gmail.com</a>
+                <p></p>
+                <a href="contact.html" class="btn-subscribe">Contact Us for Subscription</a>
+                <p></p>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="arrow">↓</div>
+            <div class="text">Scroll to explore demo mode</div>
+        </div>
+    </header>
+
+    <section class="demo-section">
+        <div class="demo-info">
+            <h2>Try Before You Subscribe</h2>
+            <p>After downloading Nextay, explore our application's features using these demo credentials. Each account provides access to different role-specific functionalities.</p>
+        </div>
+
+        <div class="credentials-grid">
+            <div class="credential-card">
+                <h3>Manager Access</h3>
+                <div class="credential-info">
+                    <p>Username: Fasi</p>
+                    <p>Password: Fasi@123</p>
+                </div>
+                <div class="role-description">
+                    Access administrative features, manage team members, and oversee all operations.
+                </div>
+            </div>
+
+            <div class="credential-card">
+                <h3>Staff Access</h3>
+                <div class="credential-info">
+                    <p>Username: Wali</p>
+                    <p>Password: Wali@123</p>
+                </div>
+                <div class="role-description">
+                    Experience day-to-day operations, task management, and collaboration features.
+                </div>
+            </div>
+
+            <div class="credential-card">
+                <h3>Finance Manager Access</h3>
+                <div class="credential-info">
+                    <p>Username: Alishba</p>
+                    <p>Password: Alishba@123</p>
+                </div>
+                <div class="role-description">
+                    Explore financial management tools, reporting features, and budget tracking capabilities.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Nextay. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
